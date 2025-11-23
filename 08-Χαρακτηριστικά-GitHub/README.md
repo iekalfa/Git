@@ -255,6 +255,20 @@ Settings → Branches → Add rule:
 - Require signed commits
 - Include administrators
 
+### GitHub Codespaces
+
+Ένα πλήρες περιβάλλον ανάπτυξης στο cloud (VS Code) που τρέχει στον browser.
+
+- **Άμεση έναρξη:** Δεν χρειάζεται εγκατάσταση εργαλείων τοπικά.
+- **Consistent environment:** Όλοι οι developers έχουν τα ίδια εργαλεία (μέσω devcontainer).
+- **Πρόσβαση παντού:** Κώδικας από οποιαδήποτε συσκευή.
+
+**Πώς να το ανοίξετε:**
+1. Πηγαίνετε στην αρχική σελίδα του repository.
+2. Πατήστε το πράσινο κουμπί **Code**.
+3. Επιλέξτε την καρτέλα **Codespaces**.
+4. Πατήστε **Create codespace on main**.
+
 ### GitHub Advanced Features
 
 #### GitHub CLI

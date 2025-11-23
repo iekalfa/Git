@@ -192,6 +192,44 @@ git log branch-a  # Βρείτε το commit hash
 git cherry-pick <commit-hash>
 ```
 
+### Άσκηση 4: Δημιουργία και Επίλυση Conflict (Βήμα-προς-Βήμα)
+
+```bash
+# 1. Προετοιμασία αρχείου στο main
+git checkout main
+echo "Color: Blue" > settings.txt
+git add settings.txt
+git commit -m "Initial settings"
+
+# 2. Αλλαγή σε νέο branch
+git checkout -b feature-red
+echo "Color: Red" > settings.txt
+git commit -am "Change color to Red"
+
+# 3. Αντικρουόμενη αλλαγή στο main
+git checkout main
+echo "Color: Green" > settings.txt
+git commit -am "Change color to Green"
+
+# 4. Προσπάθεια συγχώνευσης (θα προκαλέσει CONFLICT)
+git merge feature-red
+
+# 5. Επίλυση
+# Ανοίξτε το settings.txt. Θα δείτε:
+# <<<<<<< HEAD
+# Color: Green
+# =======
+# Color: Red
+# >>>>>>> feature-red
+
+# Κρατήστε όποιο χρώμα θέλετε (ή και τα δύο) και σβήστε τους markers.
+# Π.χ. κρατάμε το Red.
+
+# 6. Ολοκλήρωση
+git add settings.txt
+git commit -m "Resolved color conflict"
+```
+
 ## Προχωρημένα Workflows
 
 ### Git Flow

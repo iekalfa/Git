@@ -32,6 +32,27 @@ git add .
 git add *.txt
 ```
 
+### Αγνόηση Αρχείων (.gitignore)
+Συχνά υπάρχουν αρχεία που δεν θέλουμε να παρακολουθεί το Git (π.χ. προσωρινά αρχεία, logs, compiled code). Αυτά τα ορίζουμε σε ένα ειδικό αρχείο με όνομα `.gitignore`.
+
+```bash
+# Δημιουργία αρχείου .gitignore
+touch .gitignore
+```
+
+Παράδειγμα περιεχομένου `.gitignore`:
+```text
+# Αγνόηση όλων των .log αρχείων
+*.log
+
+# Αγνόηση φακέλου node_modules
+node_modules/
+
+# Αγνόηση αρχείων συστήματος
+.DS_Store
+Thumbs.db
+```
+
 ### Δημιουργία Commit (git commit)
 
 ```bash
@@ -87,11 +108,14 @@ git diff README.md
 ## Ασκήσεις
 
 1. Δημιουργήστε ένα νέο αρχείο `hello.txt` με το περιεχόμενο "Hello Git"
-2. Προσθέστε το αρχείο στο staging area
-3. Κάντε commit με το μήνυμα "Προσθήκη hello.txt"
-4. Τροποποιήστε το αρχείο και δείτε τις διαφορές με `git diff`
-5. Προσθέστε και κάντε commit τις αλλαγές
-6. Δείτε το ιστορικό με `git log --oneline`
+2. Δημιουργήστε ένα αρχείο `secret.log` και ένα αρχείο `.gitignore`
+3. Ρυθμίστε το `.gitignore` ώστε να αγνοεί όλα τα `*.log` αρχεία
+4. Ελέγξτε με `git status` ότι το `secret.log` αγνοείται
+5. Προσθέστε το `hello.txt` και το `.gitignore` στο staging area
+6. Κάντε commit με το μήνυμα "Προσθήκη hello.txt και gitignore"
+7. Τροποποιήστε το αρχείο και δείτε τις διαφορές με `git diff`
+8. Προσθέστε και κάντε commit τις αλλαγές
+9. Δείτε το ιστορικό με `git log --oneline`
 
 ## Καλές Πρακτικές
 
