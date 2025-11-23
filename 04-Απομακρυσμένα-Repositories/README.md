@@ -6,6 +6,20 @@
 - Λήψη αλλαγών (pull, fetch)
 - Κλωνοποίηση repositories
 
+## 📓 Σύνοψη
+Μέχρι τώρα όλα ήταν τοπικά. Τώρα μαθαίνουμε να συνδεόμαστε με το GitHub (ή GitLab/Bitbucket), να ανεβάζουμε (push) και να κατεβάζουμε (pull/fetch) αλλαγές. Αυτό ανοίγει τον δρόμο για συνεργασία.
+
+## 🔑 Βασικές Έννοιες
+- **Remote**: Απομακρυσμένος server που φιλοξενεί το repository.
+- **origin**: Το προεπιλεγμένο όνομα του κύριου remote.
+- **clone**: Αντιγραφή ολόκληρου repository από remote.
+- **push**: Αποστολή τοπικών commits στο remote.
+- **pull**: Fetch + Merge (λήψη και ενσωμάτωση).
+- **fetch**: Λήψη αλλαγών χωρίς merge.
+- **Tracking branch**: Τοπικό branch συνδεδεμένο με remote branch.
+
+> Ροή: Τοπικό commit → `git push` → Remote repository → Άλλοι κάνουν `git pull`
+
 ## Θεωρία
 
 ### Τι είναι τα Remote Repositories;
@@ -236,6 +250,41 @@ git push origin main
 - Κάντε push συχνά για να μοιράζεστε την πρόοδό σας
 - Χρησιμοποιήστε περιγραφικά ονόματα για τα branches
 - Μην κάνετε force push σε shared branches
+
+## ✅ Checklist Εμπέδωσης
+- [ ] Δημιούργησα Personal Access Token ή SSH key.
+- [ ] Κατανοώ τη διαφορά `fetch` vs `pull`.
+- [ ] Έκανα `clone` repository και δουλεύω σε τοπικό αντίγραφο.
+- [ ] Έκανα `push` αλλαγές και τις είδα στο GitHub.
+- [ ] Έκανα `pull` αλλαγές από άλλους και συγχρονίστηκα.
+
+## 🧪 Mini Quiz
+1. Τι κάνει το `git clone`; (α) Αντιγράφει όλο το history ✓ (β) Μόνο τα αρχεία
+2. Η διαφορά fetch/pull; (α) Fetch δεν κάνει merge ✓ (β) Είναι το ίδιο
+3. Το `-u` στο `git push -u`; (α) Ορίζει tracking ✓ (β) Force push
+
+## ⚠️ Συνηθισμένα Λάθη
+- Push χωρίς πρώτα pull → conflicts και rejected push.
+- Χρήση password αντί για PAT → authentication error.
+- Force push σε shared branch → χάνετε δουλειά άλλων.
+- Ξεχνάτε το `-u` → κάθε φορά πρέπει να γράφετε `origin main`.
+
+## 💡 Συμβουλή
+Πάντα `git pull` πριν ξεκινήσετε δουλειά – αποφεύγει conflicts.
+
+## 🔁 Ανακεφαλαίωση Ροής
+1. `git clone` (μία φορά) ή `git pull` (κάθε μέρα)
+2. Κάνετε αλλαγές και commits
+3. `git push` για να μοιραστείτε
+
+## 🔐 Authentication Quick Reference
+- **HTTPS + PAT**: Εύκολο, token ως password.
+- **SSH**: Πιο ασφαλές, χωρίς κωδικούς κάθε φορά.
+
+## 📝 Προσωπικές Σημειώσεις
+```
+(π.χ. "Δημιούργησα SSH key για πρώτη φορά")
+```
 
 ## Επόμενο Βήμα
 Μετά την ολοκλήρωση αυτού του επιπέδου, προχωρήστε στο [Επίπεδο 5: Συνεργασία στο GitHub](../05-Συνεργασία-GitHub/)

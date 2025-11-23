@@ -7,6 +7,20 @@
 - Git hooks και automation
 - Submodules και subtrees
 
+## 📓 Σύνοψη
+Προχωρημένα εργαλεία διάσωσης και διαχείρισης: stash για προσωρινή αποθήκευση, reset/revert για αναίρεση, tags για releases, hooks για automation. Εδώ μαθαίνετε να διορθώνετε λάθη και να αυτοματοποιείτε.
+
+## 🔑 Βασικές Έννοιες
+- **Stash**: Προσωρινή αποθήκευση αλλαγών χωρίς commit.
+- **Reset**: Μετακίνηση HEAD (--soft/--mixed/--hard).
+- **Revert**: Δημιουργία νέου commit που αναιρεί παλιό.
+- **Tag**: Ετικέτα σε commit (συνήθως για versions).
+- **Reflog**: Ιστορικό όλων των HEAD κινήσεων (διάσωση!).
+- **Bisect**: Binary search για bug-introducing commit.
+- **Hooks**: Scripts που τρέχουν σε events (pre-commit, pre-push).
+
+> Ιεραρχία καταστροφής: checkout < reset --soft < reset --mixed < reset --hard
+
 ## Θεωρία
 
 ### Git Stash
@@ -294,6 +308,63 @@ git push origin v1.0.0
 - Χρησιμοποιήστε semantic versioning (v1.2.3)
 - Annotated tags είναι καλύτερα από lightweight
 - Tag σημαντικά milestones και releases
+
+## ✅ Checklist Εμπέδωσης
+- [ ] Χρησιμοποίησα `git stash` για προσωρινή αποθήκευση.
+- [ ] Έκανα `git reset` για ακύρωση commit (με --soft).
+- [ ] Έκανα `git revert` για αναίρεση public commit.
+- [ ] Δημιούργησα annotated tag για release.
+- [ ] Κατανοώ τη διαφορά reset vs revert vs checkout.
+
+## 🧪 Mini Quiz
+1. Τι κρατά το stash; (α) Uncommitted changes ✓ (β) Commits
+2. `git reset --hard`; (α) Διαγράφει όλα ✓ (β) Κρατά στο staging
+3. Για public commit χρησιμοποιούμε; (α) revert ✓ (β) reset
+
+## ⚠️ Συνηθισμένα Λάθη
+- `git reset --hard` χωρίς backup → χάνετε δουλειά.
+- Reset σε public commit → ξαναγράφετε ιστορία.
+- Stash πολλές αλλαγές και ξεχνάτε τι έχετε.
+- Lightweight tags αντί annotated → λείπουν metadata.
+
+## 💡 Συμβουλή Διάσωσης
+Αν κάνατε λάθος: `git reflog` → βρείτε το παλιό commit → `git reset --hard HEAD@{N}`
+
+## 🔁 Recovery Strategies
+
+| Σενάριο | Λύση |
+|---------|------|
+| Θέλω να ακυρώσω τελευταίο commit | `git reset --soft HEAD~1` |
+| Έκανα λάθος merge | `git reset --hard ORIG_HEAD` |
+| Διέγραψα κατά λάθος branch | `git reflog` → `git checkout -b branch SHA` |
+| Θέλω να αναιρέσω public commit | `git revert SHA` |
+| Έχασα αλλαγές | `git reflog` + `git reset` |
+
+## 🎯 Quick Command Reference
+```bash
+# Stash
+git stash save "message"
+git stash list
+git stash pop
+
+# Reset levels
+git reset --soft HEAD~1   # Ακύρωση commit, κρατά staging
+git reset --mixed HEAD~1  # Ακύρωση commit, αφαιρεί από staging
+git reset --hard HEAD~1   # Ακύρωση commit, διαγραφή αλλαγών
+
+# Tags
+git tag -a v1.0.0 -m "Release 1.0"
+git push origin v1.0.0
+
+# Reflog
+git reflog
+git reset --hard HEAD@{2}
+```
+
+## 📝 Προσωπικές Σημειώσεις
+```
+(π.χ. "Έσωσα το project με reflog!")
+```
 
 ## Επόμενο Βήμα
 Μετά την ολοκλήρωση αυτού του επιπέδου, προχωρήστε στο [Επίπεδο 8: Χαρακτηριστικά GitHub](../08-Χαρακτηριστικά-GitHub/)

@@ -6,6 +6,19 @@
 - Cherry-picking commits
 - Διαχείριση συγκρούσεων
 
+## 📓 Σύνοψη
+Προχωρημένες τεχνικές branches: rebase για καθαρό ιστορικό, cherry-pick για επιλεκτικά commits, merge strategies και επίλυση conflicts. Εδώ μαθαίνετε να ξαναγράφετε ιστορία (προσεκτικά!).
+
+## 🔑 Βασικές Έννοιες
+- **Rebase**: "Ξαναπαίξτε" commits πάνω σε άλλο branch.
+- **Interactive Rebase**: Επεξεργασία commits (squash, reword, drop).
+- **Cherry-pick**: Αντιγραφή συγκεκριμένου commit σε άλλο branch.
+- **Merge strategies**: Fast-forward, no-ff, squash.
+- **Conflict**: Όταν το Git δεν μπορεί να συνδυάσει αλλαγές αυτόματα.
+- **Conflict markers**: `<<<<<<<`, `=======`, `>>>>>>>`
+
+> Κανόνας χρυσός: ΠΟΤΕ rebase σε public/shared branches!
+
 ## Θεωρία
 
 ### Merge vs Rebase
@@ -278,6 +291,48 @@ git commit -m "Resolved color conflict"
 - Επιλύστε conflicts όσο το δυνατόν νωρίτερα
 - Κάντε sync τακτικά με το main branch
 - Επικοινωνήστε με το team για μεγάλες αλλαγές
+
+## ✅ Checklist Εμπέδωσης
+- [ ] Έκανα rebase σε τοπικό branch για καθαρό ιστορικό.
+- [ ] Χρησιμοποίησα interactive rebase για squash commits.
+- [ ] Έκανα cherry-pick συγκεκριμένου commit.
+- [ ] Επέλυσα conflict χειροκίνητα και ολοκλήρωσα merge.
+- [ ] Κατανοώ πότε να χρησιμοποιώ rebase vs merge.
+
+## 🧪 Mini Quiz
+1. Πότε χρησιμοποιούμε rebase; (α) Σε τοπικό branch ✓ (β) Σε public branch
+2. Τι κάνει το `git cherry-pick`; (α) Αντιγράφει commit ✓ (β) Διαγράφει commit
+3. Conflict markers είναι; (α) `<<<<` `====` `>>>>` ✓ (β) `[[[` `]]]`
+
+## ⚠️ Συνηθισμένα Λάθη
+- Rebase σε branch που έχει κάνει push → ξαναγράφετε ιστορία που είδαν άλλοι.
+- Διαγραφή όλου του κώδικα κατά την επίλυση conflict (κρατάτε λάθος τμήμα).
+- Πολύ μεγάλα interactive rebases → δύσκολο να διαχειριστείτε.
+
+## 💡 Συμβουλή
+Για επίλυση conflicts: Χρησιμοποιήστε `git mergetool` ή IDE με visual merge.
+
+## 🔁 Πότε Merge vs Rebase
+
+| Κατάσταση | Χρήση |
+|-----------|-------|
+| Τοπικό branch cleanup | Rebase |
+| Integration από shared branch | Merge |
+| Ιστορικό feature branch | Rebase πριν το PR |
+| Hotfix σε production | Merge (no-ff) |
+
+## 🛠️ Conflict Resolution Steps
+1. `git status` → δείτε ποια αρχεία έχουν conflict
+2. Ανοίξτε το αρχείο, δείτε markers
+3. Επιλέξτε ποιο κομμάτι να κρατήσετε (ή και τα δύο)
+4. Σβήστε τα markers
+5. `git add` το αρχείο
+6. `git commit` ή `git rebase --continue`
+
+## 📝 Προσωπικές Σημειώσεις
+```
+(π.χ. "Πρώτη φορά rebase, φοβήθηκα αλλά δούλεψε!")
+```
 
 ## Επόμενο Βήμα
 Μετά την ολοκλήρωση αυτού του επιπέδου, προχωρήστε στο [Επίπεδο 7: Προχωρημένα Θέματα](../07-Προχωρημένα-Θέματα/)

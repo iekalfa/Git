@@ -6,6 +6,19 @@
 - Code review και συνεργασία
 - Forks και contribution σε open source
 
+## 📓 Σύνοψη
+Εδώ μαθαίνουμε τον επαγγελματικό τρόπο συνεργασίας: Forks, Pull Requests, Code Review, Issues. Αυτό είναι το workflow που χρησιμοποιούν όλες οι ομάδες και τα open source projects.
+
+## 🔑 Βασικές Έννοιες
+- **Fork**: Προσωπικό αντίγραφο repository άλλου.
+- **Pull Request (PR)**: Αίτημα συγχώνευσης αλλαγών σας.
+- **upstream**: Το αρχικό repository (όταν έχετε fork).
+- **origin**: Το δικό σας fork.
+- **Code Review**: Έλεγχος κώδικα πριν το merge.
+- **Issue**: Αναφορά bug, feature request ή συζήτηση.
+
+> Ροή: Fork → Clone → Branch → Commits → Push → Pull Request → Review → Merge
+
 ## Θεωρία
 
 ### GitHub Workflow
@@ -191,6 +204,65 @@ git push origin feature-branch
 - Automated testing
 - CI/CD pipelines
 - Automated workflows
+
+## ✅ Checklist Εμπέδωσης
+- [ ] Έκανα fork repository και το clone τοπικά.
+- [ ] Δημιούργησα Pull Request και περίμενα review.
+- [ ] Έκανα code review σε PR άλλου.
+- [ ] Σύνδεσα PR με issue χρησιμοποιώντας `fixes #N`.
+- [ ] Ενημέρωσα το fork μου από το upstream.
+
+## 🧪 Mini Quiz
+1. Τι είναι το fork; (α) Αντίγραφο στο δικό σας account ✓ (β) Clone τοπικά
+2. Το PR; (α) Αίτημα merge ✓ (β) Issue
+3. Πώς κλείνω issue αυτόματα; (α) `fixes #123` στο commit ✓ (β) Χειροκίνητα
+
+## ⚠️ Συνηθισμένα Λάθη
+- Push στο upstream αντί για το origin (δεν έχετε δικαιώματα).
+- Μεγάλα PRs (>500 γραμμές) → δύσκολο review.
+- Κακογραμμένες περιγραφές PR → δεν καταλαβαίνει κανείς τι κάνετε.
+- Ξεχνάτε να ενημερώσετε το fork από upstream → conflicts.
+
+## 💡 Συμβουλή για Reviewers
+- Κάντε constructive comments: "Θα ήταν καλύτερο αν..." αντί "Λάθος!".
+
+## 💡 Συμβουλή για Authors
+- Μικρά, focused PRs → γρηγορότερο review και merge.
+
+## 🔁 Ανακεφαλαίωση Workflow
+1. Fork repository
+2. Clone το fork σας
+3. Προσθέστε upstream remote
+4. Δημιουργήστε feature branch
+5. Κάντε commits
+6. Push στο origin (fork)
+7. Δημιουργήστε PR από fork → upstream
+8. Αντιμετωπίστε review comments
+9. Μετά το merge, ενημερώστε fork από upstream
+
+## 📋 PR Description Template
+```markdown
+## Τι αλλάζει
+[Σύντομη περιγραφή]
+
+## Γιατί
+[Αιτιολόγηση]
+
+## Πώς δοκιμάστηκε
+- [ ] Τοπικά tests
+- [ ] Manual testing
+
+## Screenshots (αν UI)
+[Εικόνες]
+
+## Fixes
+Fixes #123
+```
+
+## 📝 Προσωπικές Σημειώσεις
+```
+(π.χ. "Πρώτο μου PR σε open source project!")
+```
 
 ## Επόμενο Βήμα
 Μετά την ολοκλήρωση αυτού του επιπέδου, προχωρήστε στο [Επίπεδο 6: Προχωρημένα Branches](../06-Προχωρημένα-Branches/)
