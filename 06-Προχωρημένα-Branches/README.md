@@ -9,6 +9,8 @@
 ## 📓 Σύνοψη
 Προχωρημένες τεχνικές branches: rebase για καθαρό ιστορικό, cherry-pick για επιλεκτικά commits, merge strategies και επίλυση conflicts. Εδώ μαθαίνετε να ξαναγράφετε ιστορία (προσεκτικά!).
 
+**Προαπαιτούμενα:** Βασίζεται στο Επίπεδο 3 (βασικό merge) και Επίπεδο 4 (remote branches). Εδώ βαθαίνουμε σε προχωρημένες τεχνικές.
+
 ## 🔑 Βασικές Έννοιες
 - **Rebase**: "Ξαναπαίξτε" commits πάνω σε άλλο branch.
 - **Interactive Rebase**: Επεξεργασία commits (squash, reword, drop).

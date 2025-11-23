@@ -10,6 +10,8 @@
 ## 📓 Σύνοψη
 Το τελικό επίπεδο: automation με GitHub Actions (CI/CD), project management με Projects, hosting με Pages, security features (Dependabot, CodeQL), και προχωρημένα εργαλεία (CLI, API, Codespaces). Εδώ γίνεστε power users!
 
+**Προαπαιτούμενα:** Αθροιστική γνώση από όλα τα προηγούμενα επίπεδα. Τα GitHub features ενσωματώνουν τα πάντα: commits, branches, remotes, PRs, merges, και automation.
+
 ## 🔑 Βασικές Έννοιες
 - **GitHub Actions**: Automation platform (CI/CD workflows).
 - **Workflow**: YAML αρχείο που ορίζει automation.
